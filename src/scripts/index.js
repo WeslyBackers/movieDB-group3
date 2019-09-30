@@ -13,7 +13,6 @@ if (parsed.movieId) {
     initThomas();
 } else {
     initMark();
-
 }
 
 
