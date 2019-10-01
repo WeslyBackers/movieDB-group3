@@ -37,7 +37,7 @@ function writeMovies(data) {
 
         //4.b-2: attributen instellen voor opmaak en click-relaties
         jumbo.setAttribute('class', 'jumbotron');
-        jumbo.setAttribute('class', 'col-6 pt-5');
+        jumbo.setAttribute('class', 'col-lg-5 col-sm-12 p-5 m-2 mb-1');
         jumbo.setAttribute('id', el.id);
         jumbo.setAttribute('onclick', getDetails());
 
@@ -45,7 +45,8 @@ function writeMovies(data) {
         var movieData =
             '<h3>' + el.title + '</h3><hr class="border-white">' +
             '<p>score: ' + el.vote_average + '/10</p>' +
-            '<p>Release: ' + el.release_date + '</p>';
+            '<p>Release: ' + el.release_date + '</p>' +
+            '<button class="btn-info p-1" id="' + el.id + '">Read more</button>';
 
         //4.b-4: datastring in jumbotron
         jumbo.innerHTML = movieData;
