@@ -1,4 +1,5 @@
-export function initThomas(){
-    const naam = "Thomas";
-    console.log(naam);
+const naam = "Thomas";
+
+export function initThomas() {
+    console.log('login: ' + naam);
 }

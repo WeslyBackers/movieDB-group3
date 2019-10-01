@@ -1,18 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/index.scss';
-import { initMark } from './mark';
+import { initWesly } from './wesly';
 import { initThomas } from './thomas';
-import { API_KEY } from './config';
+import { API_KEY } from './config.js';
 import queryString from "query-string";
+import Axios from "axios";
+
 
 const parsed = queryString.parse(location.search);
 
-// Geeft je een nummer tussen 0 en 1 terug
-const number = Math.random(); 
 if (parsed.movieId) {
     initThomas();
 } else {
-    initMark();
+    initWesly();
 }
-
-
