@@ -42,14 +42,13 @@ function writeMovies(data) {
         jumbo.setAttribute('class', 'jumbotron');
         jumbo.setAttribute('class', 'col-lg-5 col-sm-12 p-5 m-2 mb-1');
         jumbo.setAttribute('id', el.id);
-        jumbo.setAttribute('onclick', 'getDetails()');
 
         //4.b-3 opmaak datastring voor in jumbotron
         var movieData =
         '<div class="mvInfo p-3"><h3>' + el.title + '</h3><hr class="border-white">' +
         '<p>score: ' + el.vote_average + '/10</p>' +
         '<p>Release: ' + el.release_date + '</p>' +
-        '<button class="readmore btn" id="' + el.id + '">Read more</button></div>';
+        '<button class="readmore btn" id="' + el.id + '" onclick="getDetails(' + el.id +')">Read more</button></div>';
 
         //4.b-4: datastring in jumbotron
         jumbo.innerHTML = movieData;
@@ -62,14 +61,14 @@ function writeMovies(data) {
 }
 
 // Functie om filmdetails op te roepen
-function getDetails() {
-    // 
-    localStorage.getItem("movieList");
-    console.log(localStorage.getItem("movieList"));
-    //Ophalen van de data van de specifieke film waarop geklikt is
-    // Axios.get('https://api.themoviedb.org/3/discover/movie?id=' + + '&api_key=' + API_KEY)
-    //     .then(function(response) {
+function getDetails(clickedMovieId) {
+    // Test of id meegegeven is 
+    console.log("De geklikte film heeft het id " + clickedMovieId);
+
+    // MovieList uit local storage oproepen
+    var movieListData = JSON.parse(localStorage.getItem("movieList"));
+    console.log(movieListData);
 
 
 
-}
+};

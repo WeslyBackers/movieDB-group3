@@ -9,7 +9,7 @@ import Axios from "axios";
 
 const parsed = queryString.parse(location.search);
 
-if (parsed.movieId) {
+if (parsed.movie) {
     loadMovieDetail();
 } else {
     loadMovies();
