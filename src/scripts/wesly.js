@@ -13,7 +13,7 @@ export function loadMovies() {
     //3.b ophalen van de data en in 'response' steken met Axios-functies
     Axios.get('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=' + API_KEY)
         .then(function(response) {
-
+           
             //3b-1: als check: data printen in console(enkel de filmdata-lijst = response.data.results)
             console.log(response.data.results);
          
