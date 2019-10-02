@@ -1,5 +1,5 @@
 const naam = "Thomas";
 
-export function initThomas() {
+export function loadMovieDetail() {
     console.log('login: ' + naam);
 }

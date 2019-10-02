@@ -7,7 +7,7 @@ import Axios from "axios";
 
 //3. uitvoeren van api-data themoviedb.org '20 populairste films'
 //3.a exporteren van funtie voor gebruik in andere index.js
-export function initWesly() {
+export function loadMovies() {
     console.log("login: " + naam);
 
     //3.b ophalen van de data en in 'response' steken met Axios-functies
