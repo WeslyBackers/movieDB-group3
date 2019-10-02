@@ -58,6 +58,12 @@ function writeMovies(data) {
     });
 }
 
+// Functie om filmdetails op te roepen
 function getDetails() {
+    //Ophalen van de data van de specifieke film waarop geklikt is
+    Axios.get('https://api.themoviedb.org/3/discover/movie?id=' + + '&api_key=' + API_KEY)
+        .then(function(response) {
+
 
 }
+
