@@ -17,6 +17,9 @@ export function loadMovies() {
             //3b-1: als check: data printen in console(enkel de filmdata-lijst = response.data.results)
             console.log(response.data.results);
 
+            // Add data to local storage to re-use later
+            localStorage.setItem("movieList", response.data.results);
+
             //3b-2: uitvoeren van de functie writeMovies to 'Overview' met de data van de filmdata-lijst =response.data.results)
             writeMovies(response.data.results);
         });
@@ -60,9 +63,10 @@ function writeMovies(data) {
 
 // Functie om filmdetails op te roepen
 function getDetails() {
+    // 
     //Ophalen van de data van de specifieke film waarop geklikt is
-    Axios.get('https://api.themoviedb.org/3/discover/movie?id=' + + '&api_key=' + API_KEY)
-        .then(function(response) {
+    // Axios.get('https://api.themoviedb.org/3/discover/movie?id=' + + '&api_key=' + API_KEY)
+    //     .then(function(response) {
 
 
 }
