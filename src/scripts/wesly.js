@@ -16,9 +16,9 @@ export function loadMovies() {
 
             //3b-1: als check: data printen in console(enkel de filmdata-lijst = response.data.results)
             console.log(response.data.results);
-
+         
             // Add data to local storage to re-use later
-            localStorage.setItem("movieList", response.data.results);
+            localStorage.setItem("movieList", JSON.stringify(response));
 
             //3b-2: uitvoeren van de functie writeMovies to 'Overview' met de data van de filmdata-lijst =response.data.results)
             writeMovies(response.data.results);
@@ -46,10 +46,10 @@ function writeMovies(data) {
 
         //4.b-3 opmaak datastring voor in jumbotron
         var movieData =
-            '<h3>' + el.title + '</h3><hr class="border-white">' +
-            '<p>score: ' + el.vote_average + '/10</p>' +
-            '<p>Release: ' + el.release_date + '</p>' +
-            '<button class="btn-info p-1" id="' + el.id + '">Read more</button>';
+        '<div class="mvInfo p-3"><h3>' + el.title + '</h3><hr class="border-white">' +
+        '<p>score: ' + el.vote_average + '/10</p>' +
+        '<p>Release: ' + el.release_date + '</p>' +
+        '<button class="readmore btn" id="' + el.id + '">Read more</button></div>';
 
         //4.b-4: datastring in jumbotron
         jumbo.innerHTML = movieData;
