@@ -42,7 +42,7 @@ function writeMovies(data) {
         jumbo.setAttribute('class', 'jumbotron');
         jumbo.setAttribute('class', 'col-lg-5 col-sm-12 p-5 m-2 mb-1');
         jumbo.setAttribute('id', el.id);
-        jumbo.setAttribute('onclick', getDetails());
+        jumbo.setAttribute('onclick', 'getDetails()');
 
         //4.b-3 opmaak datastring voor in jumbotron
         var movieData =
@@ -65,6 +65,7 @@ function writeMovies(data) {
 function getDetails() {
     // 
     localStorage.getItem("movieList");
+    console.log(localStorage.getItem("movieList"));
     //Ophalen van de data van de specifieke film waarop geklikt is
     // Axios.get('https://api.themoviedb.org/3/discover/movie?id=' + + '&api_key=' + API_KEY)
     //     .then(function(response) {
