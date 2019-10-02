@@ -10,15 +10,10 @@ import { get } from 'https';
 
 const parsed = queryString.parse(location.search);
 
-var movieDetails = document.querySelector('.movieDetails');
-var overviewPage = document.querySelector('.overviewPage');
 
-if (parsed.movieId) {
+if (parsed.movie) {
     loadMovieDetail();
-    movieDetails.setAttribute("hidden", false);
-    overviewPage.setAttribute("hidden", true);    
+  
 } else {
     loadMovies();
-    movieDetails.setAttribute("hidden", true);
-    overviewPage.setAttribute("hidden", false);
 }
