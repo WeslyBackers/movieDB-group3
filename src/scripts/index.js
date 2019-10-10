@@ -8,13 +8,13 @@ import Axios from "axios";
 
 
 const parsed = queryString.parse(location.search);
+var movieId;
 
 // Switchen tussen overview en detail nog verder afwerken!
-if (parsed.movie) {
-    const stringified = queryString.stringify(parsed);
-    console.log(stringified);
-    // var movieId = 
+if (parsed.id) {
+    movieId = parsed.id;
+    console.log(movieId);
     loadMovieDetail();
 } else {
     loadMovies();
-}
+};
