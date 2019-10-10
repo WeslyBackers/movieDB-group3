@@ -31,7 +31,6 @@ function writeMovies(data) {
     console.log(data);
 
     //4.b Loop door de filmlijst om deze in html te droppen met forEach ipv for-loop
-
     data.forEach(el => {
         //console.log(el);
 
@@ -48,7 +47,7 @@ function writeMovies(data) {
         '<div class="mvInfo p-3"><h3>' + el.title + '</h3><hr class="border-white">' +
         '<p>score: ' + el.vote_average + '/10</p>' +
         '<p>Release: ' + el.release_date + '</p>' +
-        '<button class="readmore btn" id="' + el.id + '" onclick="getDetails(' + el.id +')">Read more</button></div>';
+        '<a class="readmore btn" href="index.html?id='+ el.id + '">Read more</a></div>';
 
         //4.b-4: datastring in jumbotron
         jumbo.innerHTML = movieData;
@@ -58,17 +57,4 @@ function writeMovies(data) {
         document.getElementById('p01').appendChild(jumbo);
 
     });
-}
-
-// Functie om filmdetails op te roepen
-function getDetails(clickedMovieId) {
-    // Test of id meegegeven is 
-    console.log("De geklikte film heeft het id " + clickedMovieId);
-
-    // MovieList uit local storage oproepen
-    var movieListData = JSON.parse(localStorage.getItem("movieList"));
-    console.log(movieListData);
-
-
-
 };
