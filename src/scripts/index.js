@@ -1,10 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/index.scss';
-import { loadMovies } from './wesly';
-import { loadMovieDetail } from './thomas';
 import { API_KEY } from './config.js';
 import queryString from "query-string";
 import Axios from "axios";
+import { loadMovies } from './wesly';
+import { loadMovieDetail } from './thomas';
 
 
 const parsed = queryString.parse(location.search);
@@ -13,8 +13,7 @@ var movieId;
 // Switchen tussen overview en detail nog verder afwerken!
 if (parsed.id) {
     movieId = parsed.id;
-    console.log(movieId);
-    loadMovieDetail();
+    loadMovieDetail(movieId);
 } else {
     loadMovies();
 };
