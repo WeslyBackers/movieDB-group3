@@ -10,20 +10,20 @@ export function loadMovieDetail(movieId) {
     var movieDetails = document.querySelector(".movieDetails");
     var overviewPage = document.querySelector(".overviewPage");
 
-     // Overschakelen naar Overview pagina
-     movieDetails.setAttribute("style", "display: block");
-     overviewPage.setAttribute("style", "display: none"); 
+    // Overschakelen naar Overview pagina
+    movieDetails.setAttribute("style", "display: block");
+    overviewPage.setAttribute("style", "display: none");
 
-     var movieData;
+    var movieData;
 
     //Ophalen van de data en in 'response' steken met Axios-functies
-    Axios.get('https://api.themoviedb.org/3/movie/'+ movieId + '?api_key=' + API_KEY)
+    Axios.get('https://api.themoviedb.org/3/movie/' + movieId + '?api_key=' + API_KEY)
         .then(function(response) {
-            
+
             movieData = response.data;
             //als check: data printen in console(enkel de filmdata-lijst = response.data.results)
             console.log(movieData);
-        
+
             // Functie aanroepen om data te printen in html
             writeMovieDetail(movieData);
 
@@ -36,29 +36,18 @@ function writeMovieDetail(movieData) {
     //4.a console print data als check of deze opgenomen wordt in de functie
     console.log(movieData);
 
-    // var mvTitle = document.getElementById("mvTitle");
-    // var mvScore = document.getElementById("mvScore");
-    // var mvReleaseDate = document.getElementById("mvReleaseDate");
-    // var mvSynopsis = document.getElementById("mvSynopsis");
-    // var mvProductionCompanies = document.getElementById("mvProductionCompanies");
-
-    // mvTitle.innerHTML = movieData.title;
-    // mvScore.innerHTML = movieData.vote_average;
-    // mvReleaseDate.innerHTML = movieData.release_date;
-    // mvSynopsis.innerHTML = movieData.overview;
-    // mvProductionCompanies.innerHTML = movieData.production_companies;
-
     var detailPage = document.querySelector(".detailPage");
     var movieDetails = `
         <div class="jumbotron" id="jumboDetail">
-            <h3 id="mvTitle">${movieData.title}</h3>
+            <h3 class="text-white mvTitle p-2" id="mvTitle"><b>${movieData.title}</b></h3>
         </div>    
-        <div class="container bg-secondary" id="movieDetailsBody>
-            <p id="mvScore">${movieData.vote_average}</p>
-            <p id="mvReleaseDate">${movieData.release_date}</p>
-            <p id="mvSynopsis">${movieData.overview}</p>
+        <div class="container mvInfo text-white rounded p-2 mvInfo border" id="movieDetailsBody>
+            <p id="mvScore"><b>Rating:</b><br> ${movieData.vote_average}</p>
+            <p id="mvReleaseDate"><b>Release Date:</b><br> ${movieData.release_date}</p>
+            <p id="mvSynopsis"><b>Description:</b> <br>${movieData.overview}</p>
+            <p id="mvProductionCompaniesTitle"><b>Production Companies:</b></p>
             <ul id="mvProductionCompanies"></ul>
-            <a class="back btn" href="index.html">Back to overview</a>
+            <div class="d-flex justify-content-end"><a class="back btn btn-light p-1" href="index.html">Back to overview</a></div>
         </div>
     `;
 

@@ -1,46 +1,50 @@
 body {
-  color: rgb(0, 0, 0);
-  background-color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0);
 }
 
 .maintitle {
-  background-color: goldenrod;
+    background-color: goldenrod;
 }
 
 h1 {
-  color: rgb(184, 115, 65);
+    color: rgb(184, 115, 65);
 }
 
 .overviewPage {
-  border-radius: 15px;
-  border-color: gray;
+    border-radius: 15px;
+    border-color: gray;
 }
 
 h2 {
-  color: rgb(141, 96, 96);
+    color: rgb(141, 96, 96);
 }
 
 .readmore {
-  color: white;
-  background: rgba(133, 141, 134, 0.6);
-  font-size: 1.2em;
-  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    color: white;
+    background: rgba(133, 141, 134, 0.6);
+    font-size: 1.2em;
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 .mvInfo {
-  background: rgba(51, 68, 53, 0.1);
-  border-radius: 15px;
+    background: rgba(93, 104, 94, 0.5);
+    border-radius: 15px;
+}
+
+.mvTitle {
+    background: rgba(93, 104, 94, 0.5);
+    border-radius: 5px;
 }
 
 .movieDetails {
-  display: none;
-
+    display: none;
 }
 
 #jumboDetail {
-  height: 500px;
+    height: 500px;
 }
 
 #movieDetailsBody {
-  background: white;
+    background: rgba(51, 68, 53, 0.1);
 }

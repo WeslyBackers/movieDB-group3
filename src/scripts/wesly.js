@@ -13,12 +13,9 @@ export function loadMovies() {
     //3.b ophalen van de data en in 'response' steken met Axios-functies
     Axios.get('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=' + API_KEY)
         .then(function(response) {
-           
+
             //3b-1: als check: data printen in console(enkel de filmdata-lijst = response.data.results)
-            console.log(response.data.results);
-         
-            // Add data to local storage to re-use later
-            localStorage.setItem("movieList", JSON.stringify(response));
+            // console.log(response.data.results);
 
             //3b-2: uitvoeren van de functie writeMovies to 'Overview' met de data van de filmdata-lijst =response.data.results)
             writeMovies(response.data.results);
@@ -28,7 +25,7 @@ export function loadMovies() {
 //4. plaatsen van data in html
 function writeMovies(data) {
     //4.a console print data als check of deze opgenomen wordt in de functie
-    console.log(data);
+    //console.log(data);
 
     //4.b Loop door de filmlijst om deze in html te droppen met forEach ipv for-loop
     data.forEach(el => {
@@ -44,10 +41,10 @@ function writeMovies(data) {
 
         //4.b-3 opmaak datastring voor in jumbotron
         var movieData =
-        '<div class="mvInfo p-3"><h3>' + el.title + '</h3><hr class="border-white">' +
-        '<p>score: ' + el.vote_average + '/10</p>' +
-        '<p>Release: ' + el.release_date + '</p>' +
-        '<a class="readmore btn" href="index.html?id='+ el.id + '">Read more</a></div>';
+            '<div class="mvInfo p-3"><h3>' + el.title + '</h3><hr class="border-white">' +
+            '<p>score: ' + el.vote_average + '/10</p>' +
+            '<p>Release: ' + el.release_date + '</p>' +
+            '<a class="readmore btn" href="index.html?id=' + el.id + '">Read more</a></div>';
 
         //4.b-4: datastring in jumbotron
         jumbo.innerHTML = movieData;
