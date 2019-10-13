@@ -40,12 +40,10 @@ h2 {
 .movieDetails {
     display: none;
 }
+
 #movieDetailsBody {
     display: flex;
     flex-direction: row-reverse;
-}
-.infoDiv, .posterDiv {
-
 }
 
 #jumboDetail {
@@ -61,4 +59,5 @@ h2 {
 .mvPoster {
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
 }
