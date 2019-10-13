@@ -3,7 +3,7 @@ import Axios from "axios";
 import { API_KEY } from "./config.js";
 
 export function loadMovieDetail(movieId) {
-    console.log('login: ' + naam);
+    //  console.log('login: ' + naam);
 
 
     // Divs vastpakken
@@ -22,7 +22,7 @@ export function loadMovieDetail(movieId) {
 
             movieData = response.data;
             //als check: data printen in console(enkel de filmdata-lijst = response.data.results)
-            console.log(movieData);
+            //console.log(movieData);
 
             // Functie aanroepen om data te printen in html
             writeMovieDetail(movieData);
@@ -40,14 +40,24 @@ function writeMovieDetail(movieData) {
     var movieDetails = `
         <div class="jumbotron" id="jumboDetail">
             <h3 class="text-white mvTitle p-2" id="mvTitle"><b>${movieData.title}</b></h3>
-        </div>    
-        <div class="container mvInfo text-white rounded p-2 mvInfo border" id="movieDetailsBody>
-            <p id="mvScore"><b>Rating:</b><br> ${movieData.vote_average}</p>
-            <p id="mvReleaseDate"><b>Release Date:</b><br> ${movieData.release_date}</p>
-            <p id="mvSynopsis"><b>Description:</b> <br>${movieData.overview}</p>
-            <p id="mvProductionCompaniesTitle"><b>Production Companies:</b></p>
-            <ul id="mvProductionCompanies"></ul>
-            <div class="d-flex justify-content-end"><a class="back btn btn-light p-1" href="index.html">Back to overview</a></div>
+        </div>  
+
+        <div class="d-flex col-12 mvInfo text-white rounded p-4 mvInfo border justify-content-between" id="movieDetailsBody">
+            <div class="d-flex row col-6">
+                <div class="flex">        
+                    <p id="mvScore"><b>Rating:</b><br> ${movieData.vote_average}</p>
+                    <p id="mvReleaseDate"><b>Release Date:</b><br> ${movieData.release_date}</p>
+                    <p id="mvSynopsis"><b>Description:</b> <br>${movieData.overview}</p>
+                    <p id="mvProductionCompaniesTitle"><b>Production Companies:</b></p>
+                    <ul id="mvProductionCompanies"></ul>
+                </div>
+                <div class="flex">
+                    <a class="back btn btn-light" href="index.html">Back to overview</a>
+                </div>        
+            </div>
+            <div class="d-flex col-5 mvPoster" style="background-image: url('https://image.tmdb.org/t/p/w342${movieData.poster_path}');"> 
+            </div>
+
         </div>
     `;
 
