@@ -35,21 +35,28 @@ function writeMovies(data) {
         var jumbo = document.createElement('div');
 
         //4.b-2: attributen instellen voor opmaak en click-relaties
-        jumbo.setAttribute('class', 'jumbotron m-2');
-        // jumbo.setAttribute('class', 'col-lg-5 col-sm-12 p-5 m-2 mb-1');
+        jumbo.setAttribute('class', 'jumbotron p-0 m-2');
         jumbo.setAttribute('id', el.id);
 
         //4.b-3 opmaak datastring voor in jumbotron
-        var movieData =
-            '<div class="mvInfo card p-3"><img src=https://image.tmdb.org/t/p/w300/' + el.poster_path +'><div class="card-body"><h3 class="card-title>' + el.title + '</h3>' +
-            '<p class="card-text">score: ' + el.vote_average + '/10</p>' +
-            '<p class="card-text">Release: ' + el.release_date + '</p>' +
-            '<a class="readmore btn" href="index.html?id=' + el.id + '">Read more</a></div></div>' ;
+        var movieData = `            
+            <div class="mvInfo card">
+                <img src=https://image.tmdb.org/t/p/w300/${el.poster_path}>
+                <div class="card-body">
+                    <h3 class="card-title">${el.title}</h3>
+                    <p class="card-text">Score: ${el.vote_average}/10</p>
+                    <p class="card-text">Release: ${el.release_date}</p>      
+                    <a class="readmore btn" href="index.html?id=${el.id}">Read more</a>
+                </div>
+            </div>
+        `;
 
         //4.b-4: datastring in jumbotron
         jumbo.innerHTML = movieData;
         jumbo.style.backgroundImage = "url('https://image.tmdb.org/t/p/w1280" + el.backdrop_path + "')";
         jumbo.style.backgroundSize = "cover";
+        jumbo.style.backgroundPosition = "center";
+
         //4.b-5:jumbotron in HTML
         document.getElementById('p01').appendChild(jumbo);
 
