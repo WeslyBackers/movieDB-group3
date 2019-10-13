@@ -42,14 +42,21 @@ function writeMovieDetail(movieData) {
             <h3 class="text-white mvTitle p-2" id="mvTitle"><b>${movieData.title}</b></h3>
         </div>    
         <div class="container mvInfo text-white rounded p-2 mvInfo border" id="movieDetailsBody>
-            <p id="mvScore"><b>Rating:</b><br> ${movieData.vote_average}</p>
-            <p id="mvReleaseDate"><b>Release Date:</b><br> ${movieData.release_date}</p>
-            <p id="mvSynopsis"><b>Description:</b> <br>${movieData.overview}</p>
-            <p id="mvProductionCompaniesTitle"><b>Production Companies:</b></p>
-            <ul id="mvProductionCompanies"></ul>
-            <div class="d-flex justify-content-end"><a class="back btn btn-light p-1" href="index.html">Back to overview</a></div>
-        </div>
-    `;
+            <div class="posterDiv">
+                <img src="https://image.tmdb.org/t/p/w300/${movieData.poster_path}">
+            </div> <!-- End of posterDiv -->
+            <div class="infoDiv">
+                <p id="mvScore"><b>Rating:</b><br> ${movieData.vote_average}</p>
+                <p id="mvReleaseDate"><b>Release Date:</b><br> ${movieData.release_date}</p>
+                <p id="mvSynopsis"><b>Description:</b> <br>${movieData.overview}</p>
+                <p id="mvProductionCompaniesTitle"><b>Production Companies:</b></p>
+                <ul id="mvProductionCompanies"></ul>
+                <div class="d-flex justify-content-end">
+                    <a class="back btn btn-light p-1" href="index.html">Back to overview</a>
+                </div><!-- End of button div -->
+            </div><!-- End of info div -->
+        </div><!--End of movieDetailsBody div-->
+    `; // end of movieDetails variable
 
     // Render detais of movie on page
     detailPage.innerHTML = movieDetails;

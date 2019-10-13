@@ -3,8 +3,8 @@ import '../styles/index.scss';
 import { API_KEY } from './config.js';
 import queryString from "query-string";
 import Axios from "axios";
-import { loadMovies } from './wesly';
-import { loadMovieDetail } from './thomas';
+import { loadMovies } from './overviewPage';
+import { loadMovieDetail } from './detailPage';
 
 
 const parsed = queryString.parse(location.search);
