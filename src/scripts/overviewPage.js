@@ -43,11 +43,20 @@ function setNavigation(page){
 
     document.getElementById("previous").setAttribute("href","index.html?page="+previouspage);
     document.getElementById("next").setAttribute("href","index.html?page="+nextpage);
-    
-    if (page > 1){
 
-        document.getElementById("page-previous").classList.remove("disabled");;
+    document.getElementById("pageBefore").setAttribute("href","index.html?page="+previouspage);
+    document.getElementById("pageBefore").innerHTML = previouspage;
+
+    document.getElementById("pageThis").innerHTML = page;
+    document.getElementById("pageNext").setAttribute("href","index.html?page="+nextpage);
+    document.getElementById("pageNext").innerHTML=nextpage;
+
+    if (page > 1){
+        document.getElementById("page-previous").classList.remove("disabled");
+        document.getElementById("page-item-before").classList.remove("disabled");
     }
+
+    
 
     }
 
