@@ -4,16 +4,18 @@ body {
 }
 
 .maintitle {
-    background-color: goldenrod;
-}
-
-h1 {
-    color: rgb(184, 115, 65);
+    color: goldenrod;
+    border-style:solid;
+    border-width:1px;
+    border-color: goldenrod;
+    border-radius: 15px;
+    padding: 20px;
 }
 
 .overviewPage {
     border-radius: 15px;
     border-color: gray;
+    top: 25px;
 }
 
 h2 {
@@ -31,11 +33,6 @@ h2 {
     background: rgba(93, 104, 94, 0.5);
     border-radius: 15px;
     height: 750px;
-}
-
-.mvTitle {
-    background: rgba(93, 104, 94, 0.5);
-    border-radius: 5px;
 }
 
 .movieDetails {
@@ -65,4 +62,15 @@ h2 {
 
 .card {
     width: 300px;
+}
+
+.nav > .pagination > .page-item > .page-link{
+    background-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-color: rgb(92, 58, 58);
+}
+
+.fas{
+    color: goldenrod;
+    font-size: 18px;
 }

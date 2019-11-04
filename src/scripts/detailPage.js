@@ -5,7 +5,6 @@ import { API_KEY } from "./config.js";
 export function loadMovieDetail(movieId) {
     //  console.log('login: ' + naam);
 
-
     // Divs vastpakken
     var movieDetails = document.querySelector(".movieDetails");
     var overviewPage = document.querySelector(".overviewPage");
@@ -32,9 +31,8 @@ export function loadMovieDetail(movieId) {
 }; // einde loadMovieDetail function
 
 
-function writeMovieDetail(movieData) {
+function writeMovieDetail(movieData, page) {
     //4.a console print data als check of deze opgenomen wordt in de functie
-    console.log(movieData);
 
     var detailPage = document.querySelector(".detailPage");
     var movieDetails = `
@@ -44,8 +42,8 @@ function writeMovieDetail(movieData) {
 
         <div class="d-flex col-12 mvInfo text-white rounded p-4 mvInfo border justify-content-between" id="movieDetailsBody">
             <div class="d-flex row col-6">
-                <div class="">        
-                    <p id="mvScore"><b>Rating:</b><br> ${movieData.vote_average}</p>
+                <div class=""> 
+                    <p id="mvScore"><b>Rating:</b><br>${movieData.vote_average}</p>
                     <p id="mvReleaseDate"><b>Release Date:</b><br> ${movieData.release_date}</p>
                     <p id="mvSynopsis"><b>Description:</b> <br>${movieData.overview}</p>
                     <p id="mvProductionCompaniesTitle"><b>Production Companies:</b></p>
