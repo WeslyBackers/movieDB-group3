@@ -31,7 +31,7 @@ export function loadMovieDetail(movieId) {
 }; // einde loadMovieDetail function
 
 
-function writeMovieDetail(movieData, page) {
+function writeMovieDetail(movieData) {
     //4.a console print data als check of deze opgenomen wordt in de functie
 
     var detailPage = document.querySelector(".detailPage");
